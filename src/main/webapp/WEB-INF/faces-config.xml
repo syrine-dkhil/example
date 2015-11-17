@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- This file is not required if you don't need any extra configuration. -->
 <faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
- xmlns:xi="http://www.w3.org/2001/XInclude"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="         http://java.sun.com/xml/ns/javaee         http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
- <navigation-rule>
-  <!-- General Navigations -->
-  <from-view-id>*</from-view-id>
-  <navigation-case>
-   <from-outcome>home</from-outcome>
-   <to-view-id>/index.xhtml</to-view-id>
-   <redirect/>
-  </navigation-case>
- </navigation-rule>
- <!-- Resource Bundles -->
- <application>
-  <resource-bundle>
-   <base-name>com.example.application</base-name>
-   <var>appmsg</var>
-  </resource-bundle>
- </application>
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="         http://java.sun.com/xml/ns/javaee         http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    <navigation-rule>
+        <!-- General Navigations -->
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!-- Employee Edit Page -->
+    <navigation-rule>
+        <from-view-id>/employee.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{editEmployeeController.save}</from-action>
+            <if>#{not facesContext.isValidationFailed()}</if>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>cancel</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <!-- Resource Bundles -->
+    <application>
+        <resource-bundle>
+            <base-name>com.example.application</base-name>
+            <var>appmsg</var>
+        </resource-bundle>
+    </application>
 </faces-config>
