@@ -7,7 +7,7 @@
         template="template.xhtml">
     <ui:param name="pageTitle" value="Example"/>
     <ui:define name="content">
-        <p:growl globalOnly="true"/>
+        <p:growl id="growl" globalOnly="true"/>
         <h:form>
             <h:panelGrid columns="3">
                 <p:outputLabel for="hiredAfter" value="Hired After:"/>
@@ -23,7 +23,7 @@
         </h:form>
         <h:form id="frmEmployees">
             <p:dataTable value="#{employeeDatatable.values}" var="emp" styleClass="employee-table"
-                         rows="10" paginator="true">
+                         rowKey="#{emp.employeeNo}" rows="10" paginator="true">
                 <p:column sortBy="#{emp.employeeNo}">
                     <f:facet name="header">Employee No</f:facet>
                     <h:link value="#{emp.employeeNo}" outcome="employee">
@@ -52,6 +52,7 @@
                 </p:column>
                 <p:column width="80" style="text-align: center">
                     <p:commandButton action="#{employeeController.remove(emp)}" icon="ui-icon-trash"
+                                     update="@form growl"
                                      style="width: 24px; height: 24px"/>
                 </p:column>
             </p:dataTable>

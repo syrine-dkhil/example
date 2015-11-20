@@ -1,7 +1,7 @@
 package com.example.ui.employee;
 
 import com.example.Employee;
-import com.example.repository.EmployeeRepository;
+import com.example.EmployeeRepository;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -38,5 +38,4 @@ public class EditEmployeeController {
 		Employee employee = employeeRepository.find(employeeForm.getEmployeeId());
 		employeeForm.setEmployee(employee);
 	}
-
 }

@@ -1,7 +1,7 @@
 package com.example.ui.employee;
 
 import com.example.Employee;
-import com.example.repository.EmployeeRepository;
+import com.example.EmployeeRepository;
 import org.omnifaces.cdi.ViewScoped;
 
 import javax.inject.Inject;

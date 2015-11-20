@@ -1,6 +1,4 @@
-package com.example.repository;
-
-import com.example.Employee;
+package com.example;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

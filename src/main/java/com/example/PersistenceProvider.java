@@ -1,4 +1,4 @@
-package com.example.producer;
+package com.example;
 
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
  */
-public class PersistenceProducer {
+public class PersistenceProvider {
 
 	/**
 	 * The JPA persistence manager
