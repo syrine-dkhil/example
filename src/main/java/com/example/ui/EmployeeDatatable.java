@@ -1,4 +1,4 @@
-package com.example.ui.employee;
+package com.example.ui;
 
 import com.example.Employee;
 import com.example.EmployeeRepository;
@@ -9,9 +9,6 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
- */
 @ViewScoped
 @Named
 public class EmployeeDatatable implements Serializable {
@@ -37,5 +34,4 @@ public class EmployeeDatatable implements Serializable {
 			values = employeeRepository.queryHiredAfter(searchForm.getHiredAfter());
 		}
 	}
-
 }

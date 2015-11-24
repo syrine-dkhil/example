@@ -6,8 +6,6 @@ import java.util.Date;
 
 /**
  * The employee JPA entity.
- *
- * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
  */
 @Entity
 public class Employee implements Serializable {
@@ -70,5 +68,4 @@ public class Employee implements Serializable {
 	public void setHireDate(final Date hireDate) {
 		this.hireDate = hireDate;
 	}
-
 }

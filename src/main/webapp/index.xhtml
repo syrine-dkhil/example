@@ -15,7 +15,7 @@
                             pattern="MM/dd/yyyy" navigator="true"
                             converterMessage="Please enter a valid date. For example 4/15/2015.">
                     <f:convertDateTime pattern="MM/dd/yyyy"/>
-                    <p:ajax event="dateSelect" listener="#{employeeDatatable.refresh}" update=":frmEmployees @form"/>
+                    <p:ajax event="dateSelect" update=":frmEmployees @form"/>
                 </p:calendar>
                 <p:message for="hiredAfter"/>
                 <p:button value="New ..." outcome="employee"/>
@@ -23,7 +23,7 @@
         </h:form>
         <h:form id="frmEmployees">
             <p:dataTable value="#{employeeDatatable.values}" var="emp" styleClass="employee-table"
-                         rowKey="#{emp.employeeNo}" rows="10" paginator="true">
+                         rows="10" paginator="true">
                 <p:column sortBy="#{emp.employeeNo}">
                     <f:facet name="header">Employee No</f:facet>
                     <h:link value="#{emp.employeeNo}" outcome="employee">

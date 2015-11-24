@@ -1,4 +1,4 @@
-package com.example.ui.employee;
+package com.example.ui;
 
 import com.example.Employee;
 import org.omnifaces.cdi.ViewScoped;
@@ -6,9 +6,6 @@ import org.omnifaces.cdi.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 
-/**
- * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
- */
 @ViewScoped
 @Named
 public class EmployeeForm implements Serializable {

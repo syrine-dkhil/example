@@ -1,21 +1,19 @@
 package com.example;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Repository for the {@link Employee} entity.
- *
- * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
  */
 @Stateless
 public class EmployeeRepository {
 
-	@Inject
+	@PersistenceContext
 	EntityManager entityManager;
 
 	public List<Employee> queryAll() {
@@ -46,5 +44,4 @@ public class EmployeeRepository {
 		Employee attached = find(employee.getEmployeeNo());
 		entityManager.remove(attached);
 	}
-
 }

@@ -1,4 +1,4 @@
-package com.example.ui.employee;
+package com.example.ui;
 
 import com.example.Employee;
 import com.example.EmployeeRepository;

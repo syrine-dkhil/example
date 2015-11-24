@@ -1,4 +1,4 @@
-package com.example.ui.employee;
+package com.example.ui;
 
 import com.example.Employee;
 import com.example.EmployeeRepository;
@@ -10,20 +10,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
-/**
- * Controller for the Employee UI page
- *
- * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
- */
 @RequestScoped
 @Named
 public class EmployeeController implements Serializable {
 
 	@Inject
 	EmployeeRepository employeeRepository;
-
-	@Inject
-	SearchForm searchForm;
 
 	@Inject
 	EmployeeDatatable employeeDatatable;
