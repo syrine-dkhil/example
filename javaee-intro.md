@@ -478,7 +478,7 @@ public class EmployeeForm {
 @Named
 public class EmployeeController {
 
-	@Inject
+	@PersistenceContext
 	EntityManager entityManager;
 
 	@Inject
@@ -842,9 +842,8 @@ Let's get out of 1990 and let's perform our search using AJAX.
 
 ```html
 <f:ajax event="change" render=":frmEmployees @form"/>
-and add id to form
-and remove search button
-TODO paste full code
+...
+<h:form id="frmEmployees">
 ```
 
 ## Summary
