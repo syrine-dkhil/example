@@ -10,6 +10,12 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <!-- Primefaces theme: we'll use NONE for now until we have a finalized theme -->
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>omega</param-value>
+    </context-param>
+
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
