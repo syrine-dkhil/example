@@ -1,10 +1,11 @@
 package com.example.ui;
 
-import com.example.Employee;
-import org.omnifaces.cdi.ViewScoped;
-
-import javax.inject.Named;
 import java.io.Serializable;
+
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
+import com.example.model.Employee;
 
 @ViewScoped
 @Named

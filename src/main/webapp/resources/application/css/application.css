@@ -6,3 +6,7 @@
     padding: 4px;
     border: 1px solid #CCC;
 }
+
+.header-divide {
+    padding: 0 4px 0 4px;
+}

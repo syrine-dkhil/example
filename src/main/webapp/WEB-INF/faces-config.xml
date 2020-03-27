@@ -6,15 +6,45 @@
 
     <!-- Employee Edit Page -->
     <navigation-rule>
-        <from-view-id>/employee.xhtml</from-view-id>
+        <from-view-id>/secure/employee.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{editEmployeeController.save}</from-action>
             <if>#{not facesContext.isValidationFailed()}</if>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/secure/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>cancel</from-outcome>
+            <to-view-id>/secure/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/secure/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>employee</from-outcome>
+            <to-view-id>/secure/employee.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <!-- General Navigations -->
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>employees</from-outcome>
+            <to-view-id>/secure/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <if>#{not empty logoutController.logout()}</if>
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>

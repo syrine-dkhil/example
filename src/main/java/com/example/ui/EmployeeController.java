@@ -1,7 +1,7 @@
 package com.example.ui;
 
-import com.example.Employee;
-import com.example.EmployeeRepository;
+import com.example.model.Employee;
+import com.example.repository.EmployeeRepository;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;

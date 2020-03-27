@@ -1,16 +1,20 @@
-package com.example;
+package com.example.repository;
 
-import javax.ejb.Stateless;
+import java.util.Date;
+import java.util.List;
+
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.Date;
-import java.util.List;
+import javax.transaction.Transactional;
+
+import com.example.model.Employee;
 
 /**
  * Repository for the {@link Employee} entity.
  */
-@Stateless
+@RequestScoped
 public class EmployeeRepository {
 
 	@PersistenceContext
@@ -32,14 +36,17 @@ public class EmployeeRepository {
 		return entityManager.find(Employee.class, id);
 	}
 
+	@Transactional(Transactional.TxType.REQUIRED)
 	public Employee merge(Employee employee) {
 		return entityManager.merge(employee);
 	}
 
+	@Transactional(Transactional.TxType.REQUIRED)
 	public void persist(Employee employee) {
 		entityManager.persist(employee);
 	}
 
+	@Transactional(Transactional.TxType.REQUIRED)
 	public void remove(Employee employee) {
 		Employee attached = find(employee.getEmployeeNo());
 		entityManager.remove(attached);

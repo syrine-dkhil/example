@@ -1,13 +1,15 @@
-package com.example;
+package com.example.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.*;
 
 /**
  * The employee JPA entity.
  */
 @Entity
+@Table(name = "employee")
 public class Employee implements Serializable {
 
 	@Id

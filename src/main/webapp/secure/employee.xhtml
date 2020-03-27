@@ -4,7 +4,7 @@
         xmlns:ui="http://java.sun.com/jsf/facelets"
         xmlns:h="http://java.sun.com/jsf/html"
         xmlns:p="http://primefaces.org/ui"
-        template="template.xhtml">
+        template="/WEB-INF/templates/template.xhtml">
     <ui:param name="pageTitle" value="Employee"/>
     <ui:define name="content">
         <f:metadata>
@@ -38,8 +38,8 @@
                 </p:inputText>
                 <p:message for="hireDate"/>
 
-                <p:commandButton action="#{editEmployeeController.save}" value="Save"/>
-                <p:button outcome="cancel" value="Cancel"/>
+                <p:commandButton action="#{editEmployeeController.save}" value="Save" icon="fa fa-save"/>
+                <p:button outcome="cancel" value="Cancel" icon="fa fa-times"/>
             </h:panelGrid>
         </h:form>
     </ui:define>

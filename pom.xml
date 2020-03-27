@@ -12,25 +12,18 @@
     <name>Example Project</name>
     <description>Project used to provide an introduction to Java EE technologies</description>
 
-    <!-- Use JBoss EE 6 Dependency Management -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-6.0</artifactId>
-                <version>3.0.3.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
-        <!-- Java EE 6 API Specificaton -->
+        <!-- Java EE 7 dependency -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>6.0</version>
+            <version>7.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -40,14 +33,6 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.3.9.Final</version>
             <scope>provided</scope>
-        </dependency>
-
-        <!-- improved datetime handling -->
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.7</version>
-            <scope>compile</scope>
         </dependency>
 
         <!-- apache utilities -->
@@ -63,14 +48,14 @@
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>
             <scope>compile</scope>
-            <version>2.0</version>
+            <version>3.4</version>
         </dependency>
 
         <!-- Primefaces -->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>6.1</version>
+            <version>7.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -81,7 +66,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
                 <configuration>
                     <webappDirectory>
                         ${project.build.directory}/${project.artifactId}-${project.version}-exploded.${project.packaging}
