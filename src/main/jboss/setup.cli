@@ -3,13 +3,13 @@
 #
 
 # The MySQL Driver
-/subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql)
+/subsystem=datasources/jdbc-driver=mysql:add(driver-name=mariadb,driver-module-name=com.mariadb)
 
 # The datasource
 /subsystem=datasources/data-source=ExampleApplicationDS:add( \
     jndi-name=java:jboss/datasources/ExampleApplicationPoolDS, \ 
-    driver-name=mysql,  \
-    connection-url=jdbc:mysql://localhost:3306/example,  \
+    driver-name=mariadb,  \
+    connection-url=jdbc:mariadb://localhost:3306/example,  \
     user-name=example, password=localonly)
 
 # The security domain
