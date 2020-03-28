@@ -2,8 +2,8 @@
 # Configures the application datasource and security domain
 #
 
-# The MySQL Driver
-/subsystem=datasources/jdbc-driver=mysql:add(driver-name=mariadb,driver-module-name=com.mariadb)
+# The MariaDB Driver
+/subsystem=datasources/jdbc-driver=mariadb:add(driver-name=mariadb,driver-module-name=com.mariadb)
 
 # The datasource
 /subsystem=datasources/data-source=ExampleApplicationDS:add( \
