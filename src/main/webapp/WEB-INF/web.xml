@@ -34,7 +34,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Restricted Pages</web-resource-name>
-            <url-pattern>/pages/secure/*</url-pattern>
+            <url-pattern>/secure/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
@@ -60,18 +60,4 @@
             <form-error-page>/login.xhtml</form-error-page>
         </form-login-config>
     </login-config>
-
-    <!-- Protect all pages under secure -->
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Restricted Pages</web-resource-name>
-            <url-pattern>/secure/*</url-pattern>
-            <http-method>GET</http-method>
-            <http-method>POST</http-method>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>LOGIN</role-name>
-        </auth-constraint>
-    </security-constraint>
-
 </web-app>

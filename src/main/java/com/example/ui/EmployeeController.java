@@ -19,7 +19,7 @@ public class EmployeeController implements Serializable {
 
 	@Inject
 	EmployeeDatatable employeeDatatable;
-
+	
 	public void remove(Employee employee) {
 		employeeRepository.remove(employee);
 		employeeDatatable.refresh();

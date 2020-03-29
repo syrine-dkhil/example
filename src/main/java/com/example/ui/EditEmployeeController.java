@@ -7,9 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- * @author <a href="mailto:mlassiter@lassitercg.com">Mark Lassiter</a>
- */
 @RequestScoped
 @Named
 public class EditEmployeeController {
