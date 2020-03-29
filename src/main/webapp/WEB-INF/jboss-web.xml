@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jboss-web>
     <context-root>/example</context-root>
-    <security-domain>Example-SecurityPolicy</security-domain>
+    <security-domain>ExampleH2SecurityPolicy</security-domain>
 </jboss-web>

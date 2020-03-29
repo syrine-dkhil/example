@@ -26,4 +26,4 @@ values (1, 'Standard User');
 INSERT INTO group_role (fk_group_id, fk_role_id)
 values (1, 1);
 INSERT INTO security_user (user_id, first_name, last_name, email_address, user_password, fk_group_id)
-VALUES (1, 'John', 'Doe', 'jdoe@example.com', MD5('password123'), 1);
+VALUES (1, 'John', 'Doe', 'jdoe@example.com', HASH('SHA256', STRINGTOUTF8('password123'), 1), 1);
