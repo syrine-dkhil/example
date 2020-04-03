@@ -33,8 +33,8 @@
                         </p:outputPanel>
 
                         <f:facet name="footer">
-                            <p:commandButton ajax="false" id="loginButton" value="Login"
-                                             action="#{loginController.login}" styleClass="btn btn-primary"/>
+                            <p:commandButton id="loginButton" value="Login" update="@all"
+                                             action="#{loginController.login}" />
                         </f:facet>
                     </h:panelGrid>
                     <f:facet name="footer">
