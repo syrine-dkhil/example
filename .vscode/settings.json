@@ -1,0 +1,9 @@
+{
+    "java.home": "/usr/local/openjdk-11",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
+}
