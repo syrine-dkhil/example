@@ -15,7 +15,9 @@
 		"vscjava.vscode-java-pack",
 		"open-liberty.liberty-dev-vscode-ext"
 	],
-
+	"mounts": [
+		"source=${localEnv:HOME}/.m2,target=/root/.m2,type=bind,consistency=cached"
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [9080],
 

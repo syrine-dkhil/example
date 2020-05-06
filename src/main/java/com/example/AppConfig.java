@@ -12,7 +12,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.security.enterprise.authentication.mechanism.http.CustomFormAuthenticationMechanismDefinition;
 import javax.security.enterprise.authentication.mechanism.http.LoginToContinue;
 import javax.security.enterprise.identitystore.DatabaseIdentityStoreDefinition;
-import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 
 @DatabaseIdentityStoreDefinition(
 		dataSourceLookup = "jdbc/DefaultDataSource",
@@ -20,7 +19,7 @@ import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 		groupsQuery = "select r.role_name from security_user u join group_role g on u.fk_group_id = g.fk_group_id join security_role r on g.fk_role_id = r.role_id where email_address = ?",
 		priority=30)
 @CustomFormAuthenticationMechanismDefinition(
-		loginToContinue = @LoginToContinue(loginPage = "/login.xhtml", errorPage = "/login.xhtml"))
+		loginToContinue = @LoginToContinue(loginPage = "/login.xhtml", errorPage = "/login-error.xhtml"))
 @ApplicationScoped
 public class AppConfig {
 

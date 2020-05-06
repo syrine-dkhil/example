@@ -6,23 +6,16 @@
     "configurations": [        
         {
             "type": "java",
-            "name": "Debug (Attach) - Remote",
+            "name": "Debug Application",
             "request": "attach",
             "hostName": "localhost",
             "port": 7777
         },
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
+            "name": "Debug Current File",
             "request": "launch",
             "mainClass": "${file}"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch)-AppConfig<example>",
-            "request": "launch",
-            "mainClass": "com.example.AppConfig",
-            "projectName": "example"
         }
     ]
 }
