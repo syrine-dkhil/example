@@ -60,11 +60,12 @@ public class LoginController {
 						request,
 						response,
 						withParams().credential(credential));
-		System.out.println("Authenticated Status: " + status.toString());
-		LOG.log(Level.INFO, "User {0} started a new session.", userName);
-		//context.getApplication().getNavigationHandler().handleNavigation(context, "login.xhtml", "home");
-		//response.sendRedirect("/index.xhtml");
-		return "home";
+		if (status == AuthenticationStatus.SUCCESS) {
+			LOG.log(Level.INFO, "User {0} started a new session.", userName);
+			return "home";
+		} else {
+			return null;
+		}
 	}
 
 }

@@ -1,4 +1,3 @@
-
 FROM openjdk:11-jdk
 
 # This Dockerfile adds a non-root user with sudo access. Use the "remoteUser"
@@ -37,23 +36,7 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
 COPY maven-settings.xml /usr/share/maven/ref/
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG /root/.m2
-ENV WILDFLY_HOME /opt/wildfly
 ENV JAVA_HOME /usr/local/openjdk-11
-
-# Wildfly
-RUN curl -fsSL -o /tmp/wildfly.zip https://download.jboss.org/wildfly/19.0.0.Final/wildfly-19.0.0.Final.zip \
-    && unzip /tmp/wildfly.zip \
-    && rm /tmp/wildfly.zip \
-    && mv "wildfly-19.0.0.Final" "${WILDFLY_HOME}/"
-
-# MariaDB module (just in case)
-RUN mkdir -p $WILDFLY_HOME/modules/system/layers/base/com/mariadb/main \
-    && curl -fsSL -o $WILDFLY_HOME/modules/system/layers/base/com/mariadb/main/mariadb-java-client-2.6.0.jar  https://downloads.mariadb.com/Connectors/java/connector-java-2.6.0/mariadb-java-client-2.6.0.jar
-COPY module.xml /opt/wildfly/modules/system/layers/base/com/mariadb/main/
-
-# Configuration
-# TODO could start server and use CLI and stop
-COPY standalone.xml /opt/wildfly/standalone/configuration/
 
 # Clean up
 RUN apt-get autoremove -y \

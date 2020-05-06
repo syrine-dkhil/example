@@ -13,11 +13,11 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"vscjava.vscode-java-pack",
-		"redhat.vscode-server-connector"
-	]
+		"open-liberty.liberty-dev-vscode-ext"
+	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080],
+	"forwardPorts": [9080],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "java -version",
