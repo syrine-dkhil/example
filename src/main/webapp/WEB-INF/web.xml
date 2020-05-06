@@ -10,7 +10,6 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!-- Primefaces theme: we'll use NONE for now until we have a finalized theme -->
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>nova-light</param-value>
@@ -19,6 +18,11 @@
     <context-param>
         <param-name>primefaces.FONT_AWESOME</param-name>
         <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
     </context-param>
 
     <servlet-mapping>
@@ -50,14 +54,4 @@
     <security-role>
         <role-name>everyone</role-name>
     </security-role>
-
-    <!-- Form based login for JPA Security check -->
-    <login-config>
-        <auth-method>FORM</auth-method>
-        <realm-name>Example Application</realm-name>
-        <form-login-config>
-            <form-login-page>/login.xhtml</form-login-page>
-            <form-error-page>/login.xhtml</form-error-page>
-        </form-login-config>
-    </login-config>
 </web-app>

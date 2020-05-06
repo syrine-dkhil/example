@@ -5,13 +5,13 @@
         xmlns:h="http://java.sun.com/jsf/html"
         xmlns:p="http://primefaces.org/ui"
         template="/WEB-INF/templates/template.xhtml">
+    <f:metadata>
+        <f:viewParam name="empid" value="#{employeeForm.employeeId}"/>
+        <f:event type="preRenderView" listener="#{editEmployeeController.preRenderViewEvent}"/>
+    </f:metadata>
+
     <ui:param name="pageTitle" value="Employee"/>
     <ui:define name="content">
-        <f:metadata>
-            <f:viewParam name="empid" value="#{employeeForm.employeeId}"/>
-            <f:event type="preRenderView" listener="#{editEmployeeController.preRenderViewEvent}"/>
-        </f:metadata>
-
         <h:form id="frmEmployee">
             <h:panelGrid columns="3">
                 <p:outputLabel for="employeeId" value="Employee ID"/>

@@ -1,6 +1,7 @@
 package com.example.ui.login;
 
 import java.io.Serializable;
+import java.security.Principal;
 
 import com.example.model.User;
 

@@ -13,7 +13,7 @@
     <h:outputText rendered="#{userInformation.loggedIn}" value="Hello #{userInformation.user.firstName}"/>
     <h:form id="frmLogout" style="display: inline" rendered="#{userInformation.loggedIn}">
         <span class="header-divide">-</span>
-        <h:commandLink value="Logout" action="logout"/>
+        <h:commandLink value="Logout" action="#{logoutController.logout}"/>
     </h:form>
     <hr/>
     <ui:insert name="content"/>

@@ -42,12 +42,6 @@
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-        <navigation-case>
-            <from-outcome>logout</from-outcome>
-            <if>#{not empty logoutController.logout()}</if>
-            <to-view-id>/index.xhtml</to-view-id>
-            <redirect/>
-        </navigation-case>
     </navigation-rule>
 
 </faces-config>
