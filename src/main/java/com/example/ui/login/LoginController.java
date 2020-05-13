@@ -1,11 +1,9 @@
 package com.example.ui.login;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,7 +23,7 @@ import static javax.security.enterprise.authentication.mechanism.http.Authentica
 @Named
 public class LoginController {
 
-	private static final Logger LOG = Logger.getLogger(LoginController.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
 
 	@Inject
 	LoginForm loginForm;
@@ -49,7 +47,7 @@ public class LoginController {
 		try {
 			request.logout();
 		} catch (ServletException e) {
-			// TODO log exception
+			LOG.warn("Logout failed: " + e.getMessage(), e);
 		}
 
 		Credential credential = new UsernamePasswordCredential(
@@ -60,7 +58,7 @@ public class LoginController {
 						response,
 						withParams().credential(credential));
 		if (status == AuthenticationStatus.SUCCESS) {
-			LOG.log(Level.INFO, "User {0} started a new session.", userName);
+			LOG.info("User {0} started a new session.", userName);
 			return "home";
 		} else {
 			return null;

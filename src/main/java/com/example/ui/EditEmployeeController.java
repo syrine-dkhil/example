@@ -1,7 +1,5 @@
 package com.example.ui;
 
-import java.util.logging.Logger;
-
 import com.example.model.Employee;
 import com.example.repository.EmployeeRepository;
 
@@ -12,8 +10,6 @@ import javax.inject.Named;
 @RequestScoped
 @Named
 public class EditEmployeeController {
-
-	private static final Logger LOG = Logger.getLogger(EditEmployeeController.class.getName());
 
 	@Inject
 	EmployeeForm employeeForm;
