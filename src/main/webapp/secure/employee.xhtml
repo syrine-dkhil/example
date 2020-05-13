@@ -12,6 +12,7 @@
 
     <ui:param name="pageTitle" value="Employee"/>
     <ui:define name="content">
+        <p:messages globalOnly="true" autoUpdate="true" />
         <h:form id="frmEmployee">
             <h:panelGrid columns="3">
                 <p:outputLabel for="employeeId" value="Employee ID"/>
@@ -38,8 +39,9 @@
                 </p:inputText>
                 <p:message for="hireDate"/>
 
-                <p:commandButton action="#{editEmployeeController.save}" value="Save" icon="fa fa-save"/>
+                <p:commandButton action="#{editEmployeeController.save}" value="Save" icon="fa fa-save" />
                 <p:button outcome="cancel" value="Cancel" icon="fa fa-times"/>
+                <p:spacer/>
             </h:panelGrid>
         </h:form>
     </ui:define>

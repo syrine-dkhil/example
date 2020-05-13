@@ -1,5 +1,7 @@
 package com.example.ui;
 
+import java.util.logging.Logger;
+
 import com.example.model.Employee;
 import com.example.repository.EmployeeRepository;
 
@@ -11,14 +13,17 @@ import javax.inject.Named;
 @Named
 public class EditEmployeeController {
 
+	private static final Logger LOG = Logger.getLogger(EditEmployeeController.class.getName());
+
 	@Inject
 	EmployeeForm employeeForm;
 
 	@Inject
 	EmployeeRepository employeeRepository;
 
-	public void save() {
+	public String save() {
 		employeeRepository.merge(employeeForm.getEmployee());
+		return "save";
 	}
 
 	public void preRenderViewEvent() {

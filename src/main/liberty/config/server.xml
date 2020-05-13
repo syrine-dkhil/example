@@ -11,22 +11,24 @@
 
   <mpMetrics authentication="false" />
 
+  <logging consoleSource="message,debug" />
+
   <variable name="default.http.port" defaultValue="9080"/>
   <variable name="default.https.port" defaultValue="9443"/>
   <variable name="app.context.root" defaultValue="/"/>
+  <variable name="db.jdbc.url" defaultValue="jdbc:h2:mem:defaultdb;LOG=1;USER=sa;password=sa" />
 
   <httpEndpoint host="*" httpPort="${default.http.port}" httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
   <keyStore id="defaultKeyStore" password="OpenLiberty" />
 
   <webApplication location="example.war" contextRoot="${app.context.root}"/>
 
-  <library id="derby">
-    <fileset dir="${shared.resource.dir}" includes="derby*.jar"/>
+  <library id="h2">
+    <fileset dir="${shared.resource.dir}" includes="h2*.jar"/>
   </library>
 
   <dataSource id="DefaultDataSource" jndiName="jdbc/DefaultDataSource">
-    <jdbcDriver libraryRef="derby"/>
-    <!-- Example properties referencing an in-memory Derby Embedded database -->
-    <properties.derby.embedded databaseName="memory:defaultdb" createDatabase="create" user="dbuser" password="dbpass"/>
-  </dataSource>  
+    <jdbcDriver libraryRef="h2"/>
+    <properties URL="${db.jdbc.url}" password="sa" user="sa" />
+  </dataSource>
 </server>

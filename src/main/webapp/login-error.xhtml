@@ -12,8 +12,6 @@
         <div class="login-form">
             <h:form id="loginForm" rendered="#{not userInformation.loggedIn}">
                 <p:focus/>
-                <p:effect type="shake" event="load" for="pnlLogin" delay="100" speed="100"
-                          rendered="#{facesContext.isValidationFailed()}"/>
                 <p:panel id="pnlLogin" styleClass="login-panel">
                     <h2>Please Sign In</h2>
                     <p:messages globalOnly="true" styleClass="login-failure"/>

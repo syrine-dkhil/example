@@ -9,6 +9,11 @@
 * wget
 * unzip
 
+## Running Liberty in Dev Mode
+
+```sh
+mvn clean liberty:create package liberty:dev
+```
 You could use H2 to get started with very little effort, but we want to demonstrate the use of an external database.
 
 ## Steps

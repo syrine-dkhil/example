@@ -16,7 +16,7 @@
 		"open-liberty.liberty-dev-vscode-ext"
 	],
 	"mounts": [
-		"source=${localEnv:HOME}/.m2,target=/root/.m2,type=bind,consistency=cached"
+		"source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [9080],
@@ -25,5 +25,5 @@
 	// "postCreateCommand": "java -version",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+	"remoteUser": "vscode"
 }

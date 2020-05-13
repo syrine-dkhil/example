@@ -8,8 +8,7 @@
     <navigation-rule>
         <from-view-id>/secure/employee.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{editEmployeeController.save}</from-action>
-            <if>#{not facesContext.isValidationFailed()}</if>
+            <from-outcome>save</from-outcome>
             <to-view-id>/secure/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
