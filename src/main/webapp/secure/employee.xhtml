@@ -20,26 +20,27 @@
                 <p:message for="employeeId"/>
 
                 <p:outputLabel for="firstName" value="First Name"/>
-                <p:inputText id="firstName" value="#{employeeForm.employee.firstName}"/>
+                <p:inputText id="firstName" required="true" requiredMessage="First name is required" value="#{employeeForm.employee.firstName}"/>
                 <p:message for="firstName"/>
 
                 <p:outputLabel for="lastName" value="Last Name"/>
-                <p:inputText id="lastName" value="#{employeeForm.employee.lastName}"/>
-                <p:message for="lastName"/>
+                <p:inputText id="lastName" required="true" requiredMessage="Last name is required"
+                             value="#{employeeForm.employee.lastName}"/>
+                <p:message for="lastName" />
 
                 <p:outputLabel for="dateOfBirth" value="Date of Birth"/>
                 <p:inputText id="dateOfBirth" value="#{employeeForm.employee.dateOfBirth}">
                     <f:convertDateTime pattern="MM/dd/yyyy"/>
                 </p:inputText>
-                <p:message for="dateOfBirth"/>
+                <p:message for="dateOfBirth" />
 
                 <p:outputLabel for="hireDate" value="Hire Date"/>
                 <p:inputText id="hireDate" value="#{employeeForm.employee.hireDate}">
                     <f:convertDateTime pattern="MM/dd/yyyy"/>
                 </p:inputText>
-                <p:message for="hireDate"/>
+                <p:message for="hireDate" />
 
-                <p:commandButton action="#{editEmployeeController.save}" value="Save" icon="fa fa-save" />
+                <p:commandButton action="#{editEmployeeController.save}" update="@all" value="Save" icon="fa fa-save" />
                 <p:button outcome="cancel" value="Cancel" icon="fa fa-times"/>
                 <p:spacer/>
             </h:panelGrid>

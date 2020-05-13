@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,7 +38,7 @@ public class LoginController {
 	 * information is updated and the user session is created. If not, a message
 	 * send back to the user indicating a failure.
 	 */
-	public String login() throws IOException {
+	public String login() {
 
 		final String userName = loginForm.getUserName();
 		final String password = loginForm.getPassword();

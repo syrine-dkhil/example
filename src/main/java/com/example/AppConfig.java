@@ -19,7 +19,7 @@ import javax.security.enterprise.identitystore.DatabaseIdentityStoreDefinition;
 		groupsQuery = "select r.role_name from security_user u join group_role g on u.fk_group_id = g.fk_group_id join security_role r on g.fk_role_id = r.role_id where email_address = ?",
 		priority=30)
 @CustomFormAuthenticationMechanismDefinition(
-		loginToContinue = @LoginToContinue(loginPage = "/login.xhtml", errorPage = "/login-error.xhtml"))
+		loginToContinue = @LoginToContinue(loginPage = "/login.xhtml", errorPage = "/login.xhtml?error=true"))
 @ApplicationScoped
 public class AppConfig {
 
