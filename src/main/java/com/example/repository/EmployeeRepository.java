@@ -9,6 +9,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
 import com.example.model.Employee;
 
 /**
@@ -20,6 +23,13 @@ public class EmployeeRepository {
 	@PersistenceContext
 	EntityManager entityManager;
 
+	@Timed(name = "employeeQueryTime",
+			tags = {"method=queryAll"},
+			absolute = true,
+			description = "Time needed to process a query to query all employees")
+	@Counted(name = "employeeQueryCount",
+			absolute = true,
+			description = "Number of times we queried for all employees")
 	public List<Employee> queryAll() {
 		TypedQuery<Employee> query = entityManager.createQuery("select e from Employee e", Employee.class);
 		return query.getResultList();

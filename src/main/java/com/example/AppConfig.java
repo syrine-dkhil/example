@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -21,7 +22,7 @@ import javax.security.enterprise.identitystore.DatabaseIdentityStoreDefinition;
 @CustomFormAuthenticationMechanismDefinition(
 		loginToContinue = @LoginToContinue(loginPage = "/login.xhtml", errorPage = "/login.xhtml?error=true"))
 @ApplicationScoped
-public class AppConfig {
+public class AppConfig implements Serializable {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		SecureRandom random = new SecureRandom();
